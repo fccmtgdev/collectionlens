@@ -45,10 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showSlide(index) {
         slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
+        if (dots.length > 0) {
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
 
         slides[index].classList.add('active');
-        dots[index].classList.add('active');
         currentSlide = index;
     }
 
@@ -90,23 +92,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Slight parallax effect for the hero visual on desktop
+    // Simple parallax effect for the hero visual on desktop
     const heroVisual = document.querySelector('.mockup-container');
-    if (heroVisual && window.innerWidth > 900) {
-        document.addEventListener('mousemove', (e) => {
-            const xAxis = (window.innerWidth / 2 - e.pageX) / 40;
-            const yAxis = (window.innerHeight / 2 - e.pageY) / 40;
-            heroVisual.style.transform = `rotateY(${xAxis - 12}deg) rotateX(${-yAxis + 8}deg)`;
-        });
-
-        // Reset when mouse leaves window
-        document.addEventListener('mouseleave', () => {
-            heroVisual.style.transform = `rotateY(-12deg) rotateX(8deg)`;
+    if (heroVisual && window.innerWidth > 992) {
+        window.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            heroVisual.style.transform = `translate(${moveX}px, ${moveY}px) rotateX(${-moveY}deg) rotateY(${moveX}deg)`;
         });
     }
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('.nav-link').forEach(anchor => {
+    // Documentation Sidebar Scroll-Spy
+    const docLinks = document.querySelectorAll('.doc-side-link');
+    const docSections = document.querySelectorAll('.doc-section, .doc-subsection, .doc-subsection-inner');
+
+    if (docLinks.length > 0 && docSections.length > 0) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '-10% 0px -80% 0px',
+            threshold: 0
+        };
+
+        const docObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    docLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        docSections.forEach(section => docObserver.observe(section));
+    }
+
+    // Smooth scrolling for navigation and sidebar links
+    document.querySelectorAll('.nav-link, .doc-side-link').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');

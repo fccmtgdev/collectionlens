@@ -28,6 +28,7 @@
             </div>
             <div class="nav-links">
                 <a href="#features" class="nav-link">Features</a>
+                <a href="#documentation" class="nav-link">Documentation</a>
                 <a href="#installation" class="nav-link">Installation</a>
                 <a href="#support" class="nav-link">Support</a>
                 <a href="https://chromewebstore.google.com/detail/mtg-collection-lens" target="_blank"
@@ -35,6 +36,10 @@
             </div>
         </div>
     </nav>
+    <div class="ai-disclaimer-banner">
+        <span>This website is unfortunately partially AI generated as I don't have the time for an handcrafted one for
+            now</span>
+    </div>
 
     <main>
         <header class="hero">
@@ -46,8 +51,8 @@
                     are while browsing EDHREC, Scryfall, and more. For brewers who'd rather use a browser than a
                     spreadsheet.</p>
                 <div class="hero-actions">
-                    <a href="https://chromewebstore.google.com/detail/mtg-collection-lens" target="_blank"
-                        class="btn btn-primary btn-large">
+                    <a href="https://chromewebstore.google.com/detail/mtg-collection-lens/nkgmdnkmdkafgjmckimpjafpmlcgfnpl"
+                        target="_blank" class="btn btn-primary btn-large">
                         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
                             fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon"
                             style="margin-right: 8px;">
@@ -61,8 +66,9 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="mockup-container glass-panel">
-                    <img src="logo_a.png" alt="MTG Collection Lens Preview" class="mockup-img">
+                <div class="mockup-container">
+                    <img src="Docs/hero_v2.png" alt="MTG Collection Lens Interface" class="mockup-img">
+                    <div class="glow-effect"></div>
                 </div>
             </div>
         </header>
@@ -71,21 +77,26 @@
             <div class="section-header">
                 <h2 class="section-title">Seamlessly Integrated</h2>
                 <p class="section-subtitle">Works out of the box with your favorite MTG sites.</p>
-                <div class="supported-sites">EDHREC &nbsp;•&nbsp; Scryfall &nbsp;•&nbsp; MTGTop8 &nbsp;•&nbsp; MTGDecks
-                    &nbsp;•&nbsp; MTGGoldfish</div>
+                <div class="site-badges">
+                    <a href="https://edhrec.com" target="_blank" class="site-badge">EDHREC</a>
+                    <a href="https://scryfall.com" target="_blank" class="site-badge">Scryfall</a>
+                    <a href="https://mtgtop8.com" target="_blank" class="site-badge">MTGTop8</a>
+                    <a href="https://mtgdecks.net" target="_blank" class="site-badge">MTGDecks</a>
+                    <a href="https://www.mtggoldfish.com" target="_blank" class="site-badge">MTGGoldfish</a>
+                </div>
             </div>
 
             <div class="features-grid">
                 <!-- Highlighting -->
-                <div class="feature-card glass-panel" style="grid-column: span 2;">
-                    <div class="feature-icon">🔍</div>
-                    <h3 class="feature-title">Smart Highlighting</h3>
-                    <p class="feature-text">EDHREC & Scryfall matching. Cards are highlighted based on your inventory.
-                        See green outlines for owned, orange for proxies, and striped patterns for copies you own but
-                        already in decks.
-                        Hover over highlighted cards to see a detailed breakdown of which of your decks currently
-                        contain those copies.</p>
-                    <div class="carousel-container">
+                <div class="feature-card glass-panel feature-card-full">
+                    <div class="feature-card-content">
+                        <div class="feature-icon">🔍</div>
+                        <h3 class="feature-title">Smart Highlighting</h3>
+                        <p class="feature-text">Cards are highlighted based on your inventory on EDHREC and Scryfall.
+                            See green outlines for owned, orange for proxies, and striped patterns for copies you own
+                            but already in decks.</p>
+                    </div>
+                    <div class="carousel-container" style="flex: 1.5; margin-top: 0;">
                         <div class="carousel-track">
                             <div class="carousel-slide active">
                                 <img src="Docs/HaveCards_EDHREC.png" loading="lazy" alt="EDHREC Highlighting">
@@ -101,27 +112,24 @@
                             </div>
                         </div>
                         <button class="carousel-btn prev" aria-label="Previous Slide">
-                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
                                 fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="15 18 9 12 15 6"></polyline>
                             </svg>
                         </button>
                         <button class="carousel-btn next" aria-label="Next Slide">
-                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
                                 fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="9 18 15 12 9 6"></polyline>
                             </svg>
                         </button>
-                        <div class="carousel-dots">
-                            <span class="dot active" data-index="0"></span>
-                            <span class="dot" data-index="1"></span>
-                            <span class="dot" data-index="2"></span>
-                        </div>
                     </div>
                 </div>
 
+
+
                 <!-- Collection & Decks -->
-                <div class="feature-card glass-panel feature-card-wide">
+                <div class="feature-card glass-panel feature-card-full">
                     <div class="feature-card-content">
                         <div class="feature-icon">📦</div>
                         <h3 class="feature-title">Collection & Decks</h3>
@@ -129,7 +137,7 @@
                             Moxfield
                             decks automatically with one click, categorizing them dynamically.</p>
                     </div>
-                    <div class="feature-images-prominent">
+                    <div class="feature-images-prominent" style="flex: 1.5; margin-top: 0;">
                         <div class="feature-img-wrapper">
                             <span class="img-label">Collection Import</span>
                             <img src="Docs/coll_a.png" loading="lazy" alt="Collection Import">
@@ -142,30 +150,154 @@
                 </div>
 
                 <!-- Detailed Tooltips -->
-                <div class="feature-card glass-panel" style="grid-column: span 2;">
-                    <div class="feature-icon">📊</div>
-                    <h3 class="feature-title">Detailed Tooltips & Badges</h3>
-                    <p class="feature-text">On sites like MTGTop8, MTGDecks, and MTGGoldfish, hover over missing cards
-                        to see an inventory badge: Total Owned, Available, and Needed for the current list. Never guess
-                        if your copy is tied up in another deck again.</p>
-                    <img src="Docs/FastPath.png" loading="lazy" alt="Compact Highlighting" class="feature-img-full"
-                        style="max-width: 600px; margin: 0 auto; display: block;">
+                <div class="feature-card glass-panel feature-card-full">
+                    <div class="feature-card-content">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">Inventory Badges</h3>
+                        <p class="feature-text">Hover over any card to see its
+                            real-time status across your entire collection: Total Owned, Available, and Needed for
+                            the
+                            list. Support for MTGTop8, MTGDecks, and MTGGoldfish is built-in.</p>
+                    </div>
+                    <div style="flex: 2;">
+                        <img src="Docs/FastPath.png" loading="lazy" alt="Compact Highlighting" class="feature-img-full"
+                            style="max-width: 1000px; margin: 0; display: block;">
+                    </div>
+                </div>
+        </section>
+
+        <section id="documentation" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Documentation</h2>
+            </div>
+
+            <div class="doc-container glass-panel">
+                <div class="doc-sidebar">
+                    <a href="#doc-manage" class="doc-side-link active">Manage Collection & Decks</a>
+                    <div class="doc-side-sub">
+                        <a href="#doc-import" class="doc-side-link">Import Collection</a>
+                        <a href="#doc-add-decks" class="doc-side-link">Deck Management</a>
+                    </div>
+                    <a href="#doc-settings" class="doc-side-link">Settings</a>
                 </div>
 
-                <!-- Backup -->
-                <div class="feature-card glass-panel">
-                    <div class="feature-icon">💾</div>
-                    <h3 class="feature-title">Local & Secure Backup</h3>
-                    <p class="feature-text">All data is stored locally. You can easily export and import your database
-                        (collection + decks + settings) via a `.json` file to move between devices seamlessly.</p>
-                </div>
+                <div class="doc-content">
+                    <!-- Manage Collection & Decks -->
+                    <div id="doc-manage" class="doc-section">
+                        <h3 class="doc-title">Manage Collection & Decks</h3>
+                        <p>The core of MTG Collection Lens is your database. Here's how to keep it synchronized and
+                            accurate.</p>
 
-                <div class="feature-card glass-panel">
-                    <div class="feature-icon">⚙️</div>
-                    <h3 class="feature-title">Customizable Settings</h3>
-                    <p class="feature-text">Select "Count Decks as Collection" to use decklists to calculate what you
-                        own, pick custom colors for highlights, and toggle individual site support on or off as needed.
-                    </p>
+                        <!-- Import Collection -->
+                        <div id="doc-import" class="doc-subsection">
+                            <h4 class="doc-subtitle">Import Collection</h4>
+                            <p>To start highlighting cards, you need to upload your inventory. We support CSV exports
+                                from the most popular collection managers.</p>
+                            <br>
+
+                            <div class="doc-step">
+                                <h5>1. Use "Open Moxfield Collection"</h5>
+                                <p>Inside the extension popup, use the <strong>Open Moxfield Collection</strong> button.
+                                    It will take you directly to the correct page and we'll highlight exactly where to
+                                    click to get your file.</p>
+                                <img src="Docs/coll_to_mox.png" alt="Moxfield Collection Link" class="doc-screenshot">
+                            </div>
+
+                            <div class="doc-step">
+                                <h5>1b. Download Inventory from Deckbox</h5>
+                                <p>If you track your collection via Deckbox, you can simply download a Deckbox inventory
+                                    CSV.</p>
+                            </div>
+
+                            <div class="doc-step">
+                                <h5>2. Upload</h5>
+                                <p>Drag and drop the file into the extension's upload zone. Your cards will be instantly
+                                    processed and ready for highlighting.</p>
+                            </div>
+                        </div>
+
+                        <!-- Add Decks -->
+                        <div id="doc-add-decks" class="doc-subsection">
+                            <h4 class="doc-subtitle">Decks Management</h4>
+                            <p>Adding your decks allows the extension to show you which cards are "Available" versus "In
+                                Use".</p>
+                            <br>
+                            <div class="doc-step">
+                                <h5>One-Click Moxfield Sync (Recommended)</h5>
+                                <p>The easiest way to track your decks is the <strong>Import All My Moxfield
+                                        Decks</strong> button. Note that you must be logged into Moxfield in your
+                                    browser for this to work.</p>
+                                <img src="Docs/import_settings.png" alt="Import Settings"
+                                    class="doc-screenshot doc-screenshot-small">
+                            </div>
+
+                            <div class="doc-step">
+                                <h5>Manual Deck Insertion</h5>
+                                <p>Not on Moxfield? No problem. Use the <strong>New Deck</strong> button and paste your
+                                    list. We support standard text formats (e.g., <code>1 Sol Ring</code>).</p>
+                                <img src="Docs/add_new_deck.png" alt="Add New Deck" class="doc-screenshot">
+                            </div>
+
+                            <div class="doc-step">
+                                <h5>The [[Proxy]] Tag</h5>
+                                <p>Want to track playtest cards? Add <code>[[Proxy]]</code> to any line in your
+                                    decklist. The extension will highlight these in <strong>Orange</strong> instead of
+                                    Green, so you always know what's real and what's a proxy.</p>
+                            </div>
+
+
+                            <div class="doc-step">
+                                <h5>Category Management</h5>
+                                <div class="doc-side-by-side">
+                                    <div class="doc-side-text">
+                                        <ul class="settings-list compact-font">
+                                            <li><strong>New Categories:</strong> Create custom categories like
+                                                "Standard," "Trade Binder," or "Playtest" using the <strong>New
+                                                    Category</strong> button.</li>
+                                            <li><strong>Drag-and-Drop:</strong> Reorder your categories globally by
+                                                dragging their headers, or sort decks within/between categories with
+                                                ease.</li>
+                                            <li><strong>Auto-Categorization:</strong> Moxfield imports automatically
+                                                sort decks into "Commander Decks" if a commander is detected.</li>
+                                            <li><strong>Flexible Deletion:</strong> Deleting a custom category is
+                                                safe—any decks inside are automatically moved to "Others."</li>
+                                        </ul>
+                                    </div>
+                                    <div class="doc-side-image">
+                                        <img src="Docs/categories_wb.png" alt="Category Management"
+                                            class="doc-screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Settings -->
+                    <div id="doc-settings" class="doc-section">
+                        <h3 class="doc-title">Settings</h3>
+                        <p>Customize the behavior and appearance of the extension to fit your workflow.</p>
+
+                        <div class="doc-side-by-side">
+                            <div class="doc-side-text">
+                                <ul class="settings-list compact-font">
+                                    <li><strong>Count Decks as Collection:</strong> Toggle whether your decklists
+                                        contribute to your total owned count.</li>
+                                    <li><strong>Mark Unavailable:</strong> When enabled, cards needed for a list but not
+                                        in your collection are marked as such.</li>
+                                    <li><strong>Color Customization:</strong> Pick custom highlight colors for standard
+                                        cards and proxies to match your preference.</li>
+                                    <li><strong>Site Toggles:</strong> Choose exactly where the extension should
+                                        activate. Support for EDHREC, Scryfall, MTGGoldfish, MTGDecks, and MTGTop8 can
+                                        be toggled individually.</li>
+                                    <li><strong>Database Management:</strong> Export your entire state (collection,
+                                        decks, and settings) as a JSON file for backup or multi-device sync.</li>
+                                </ul>
+                            </div>
+                            <div class="doc-side-image">
+                                <img src="Docs/settings_tab.png" alt="Settings Tab" class="doc-screenshot">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -197,6 +329,15 @@
                             Moxfield Decks" to start highlighting your way through the internet!</p>
                     </div>
                 </div>
+
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>Visit your favorite website!</h3>
+                        <p>Go to Scryfall, Moxfield, or any other supported website and watch the magic happen!</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
