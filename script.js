@@ -150,4 +150,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // Dynamic Store Links Detection
+    const CHROME_LINK = "https://chromewebstore.google.com/detail/mtg-collection-lens/nkgmdnkmdkafgjmckimpjafpmlcgfnpl";
+    const FIREFOX_LINK = "https://addons.mozilla.org/addon/mtg-collection-lens/";
+
+    const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+    const storeLinks = document.querySelectorAll('.install-link');
+
+    storeLinks.forEach(link => {
+        if (isFirefox) {
+            link.href = FIREFOX_LINK;
+            // Update text if it's explicitly "Chrome Web Store"
+            if (link.textContent.trim() === 'Chrome Web Store') {
+                link.textContent = 'Firefox Add-ons';
+            }
+        } else {
+            link.href = CHROME_LINK;
+        }
+    });
 });
