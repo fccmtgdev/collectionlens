@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTG Collection Lens | Chrome Extension</title>
+    <meta name="description"
+        content="A browser extension to highlight Magic: The Gathering cards from your collection while browsing EDHREC, Scryfall, MTGTop8, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo_a.png">
+</head>
+
+<body>
+    <div class="glow-bg"></div>
+    <div class="grain-overlay"></div>
+
+    <nav class="navbar glass-panel">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="logo_a.png" alt="Logo" class="logo-img">
+                <span class="logo-text">MTG Collection Lens</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#installation" class="nav-link">Installation</a>
+                <a href="#support" class="nav-link">Support</a>
+                <a href="https://chromewebstore.google.com/detail/mtg-collection-lens" target="_blank"
+                    class="btn btn-primary">Get Extension</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">Now Available on Chrome Web Store</div>
+                <h1 class="hero-title">Your MTG Collection,<br><span class="gradient-text">Anywhere You Browse</span>
+                </h1>
+                <p class="hero-subtitle">Instantly know what cards you own, what you need to buy, and where your copies
+                    are while browsing EDHREC, Scryfall, and more. For brewers who'd rather use a browser than a
+                    spreadsheet.</p>
+                <div class="hero-actions">
+                    <a href="https://chromewebstore.google.com/detail/mtg-collection-lens" target="_blank"
+                        class="btn btn-primary btn-large">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon"
+                            style="margin-right: 8px;">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        Install Extension
+                    </a>
+                    <a href="#installation" class="btn btn-secondary btn-large">View Documentation</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="mockup-container glass-panel">
+                    <img src="logo_a.png" alt="MTG Collection Lens Preview" class="mockup-img">
+                </div>
+            </div>
+        </header>
+
+        <section id="features" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Seamlessly Integrated</h2>
+                <p class="section-subtitle">Works out of the box with your favorite MTG sites.</p>
+                <div class="supported-sites">EDHREC &nbsp;•&nbsp; Scryfall &nbsp;•&nbsp; MTGTop8 &nbsp;•&nbsp; MTGDecks
+                    &nbsp;•&nbsp; MTGGoldfish</div>
+            </div>
+
+            <div class="features-grid">
+                <!-- Highlighting -->
+                <div class="feature-card glass-panel" style="grid-column: span 2;">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">Smart Highlighting</h3>
+                    <p class="feature-text">EDHREC & Scryfall matching. Cards are highlighted based on your inventory.
+                        See green outlines for owned, orange for proxies, and striped patterns for copies you own but
+                        already in decks.
+                        Hover over highlighted cards to see a detailed breakdown of which of your decks currently
+                        contain those copies.</p>
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <div class="carousel-slide active">
+                                <img src="Docs/HaveCards_EDHREC.png" loading="lazy" alt="EDHREC Highlighting">
+                                <div class="carousel-caption">EDHREC Highlighting with Deck Breakdown</div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="Docs/ProxyEDHRec.png" loading="lazy" alt="EDHREC Proxy Highlighting">
+                                <div class="carousel-caption">Proxy and Mixed Ownership Indicators</div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="Docs/Scryfall.png" loading="lazy" alt="Scryfall Highlighting">
+                                <div class="carousel-caption">Scryfall Integration with Visual Outlines</div>
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" aria-label="Previous Slide">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <button class="carousel-btn next" aria-label="Next Slide">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <div class="carousel-dots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collection & Decks -->
+                <div class="feature-card glass-panel feature-card-wide">
+                    <div class="feature-card-content">
+                        <div class="feature-icon">📦</div>
+                        <h3 class="feature-title">Collection & Decks</h3>
+                        <p class="feature-text">Import your collection via CSV from Moxfield or Deckbox. Sync your
+                            Moxfield
+                            decks automatically with one click, categorizing them dynamically.</p>
+                    </div>
+                    <div class="feature-images-prominent">
+                        <div class="feature-img-wrapper">
+                            <span class="img-label">Collection Import</span>
+                            <img src="Docs/coll_a.png" loading="lazy" alt="Collection Import">
+                        </div>
+                        <div class="feature-img-wrapper">
+                            <span class="img-label">Deck Management</span>
+                            <img src="Docs/deck_a.png" loading="lazy" alt="Deck View">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Tooltips -->
+                <div class="feature-card glass-panel" style="grid-column: span 2;">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Detailed Tooltips & Badges</h3>
+                    <p class="feature-text">On sites like MTGTop8, MTGDecks, and MTGGoldfish, hover over missing cards
+                        to see an inventory badge: Total Owned, Available, and Needed for the current list. Never guess
+                        if your copy is tied up in another deck again.</p>
+                    <img src="Docs/FastPath.png" loading="lazy" alt="Compact Highlighting" class="feature-img-full"
+                        style="max-width: 600px; margin: 0 auto; display: block;">
+                </div>
+
+                <!-- Backup -->
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon">💾</div>
+                    <h3 class="feature-title">Local & Secure Backup</h3>
+                    <p class="feature-text">All data is stored locally. You can easily export and import your database
+                        (collection + decks + settings) via a `.json` file to move between devices seamlessly.</p>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon">⚙️</div>
+                    <h3 class="feature-title">Customizable Settings</h3>
+                    <p class="feature-text">Select "Count Decks as Collection" to use decklists to calculate what you
+                        own, pick custom colors for highlights, and toggle individual site support on or off as needed.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="installation" class="section alt-bg">
+            <div class="section-header">
+                <h2 class="section-title">Get Started</h2>
+            </div>
+
+            <div class="install-steps glass-panel">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>Install the Extension</h3>
+                        <p>Get MTG Collection Lens directly from the Chrome Web Store for the seamless experience and
+                            auto-updates.</p>
+                        <a href="https://chromewebstore.google.com/detail/mtg-collection-lens" target="_blank"
+                            class="btn btn-primary btn-small mt-3">Chrome Web Store</a>
+                    </div>
+                </div>
+
+                <div class="step-divider"></div>
+
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>Import & Sync</h3>
+                        <p>Click the extension icon in your toolbar, upload your collection CSV, and hit "Import All My
+                            Moxfield Decks" to start highlighting your way through the internet!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="support" class="section ko-fi-section">
+            <div class="glass-panel ko-fi-panel">
+                <h2 class="ko-fi-title">Support the Development</h2>
+                <p class="ko-fi-text">If you find this extension useful and want to support its continued development,
+                    consider buying me a coffee to keep the late-night coding going! Zero pressure, maximum
+                    appreciation.</p>
+                <a href="https://ko-fi.com/" target="_blank" class="btn ko-fi-btn">
+                    <img src="logomarkLogo.webp" alt="Support" class="ko-fi-icon"
+                        style="height: 24px; margin-right: 8px; filter: brightness(0) invert(1);">
+                    Support the Project
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo-text">MTG Collection Lens</div>
+            <p>A browser extension to highlight cards from your collection.</p>
+            <p class="disclaimer">This extension is unofficial Fan Content permitted under the Fan Content Policy. Not
+                approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast.
+                ©Wizards of the Coast LLC.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
