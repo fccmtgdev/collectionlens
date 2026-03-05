@@ -1,0 +1,17 @@
+# Extension Source Code (NEVER upload to MTGCollectionLensSite)
+background.js
+content.js
+manifest.json
+popup.css
+popup.html
+popup.js
+moxfield-logo.png
+*.zip
+.git
+.agents/
+.agent/
+brain/
+implementation_plan.md
+task.md
+walkthrough.md
+README.md
