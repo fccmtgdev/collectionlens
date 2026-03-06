@@ -480,7 +480,11 @@ h4 {
 }
 
 .doc-screenshot-small {
-    max-width: 500px !important;
+    max-width: 500px;
+}
+
+#known-issues {
+    padding-bottom: 2rem;
 }
 
 .feature-card-content {
